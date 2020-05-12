@@ -91,6 +91,9 @@ fig = px.pie(full_data_guests['market_segment'].value_counts(),
 fig.update_traces(textposition="inside", textinfo="value+percent+label")
 plot(fig)
 
+#predict cancelations
+cancel_corr = full_data_cln.corr()["is_canceled"]
+cancel_corr.abs().sort_values(ascending=False)[1:]
 
 
 
